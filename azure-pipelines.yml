@@ -16,6 +16,7 @@ steps:
 
 - task: DotNetCoreCLI@2
   inputs:
+    versioningScheme: 'off'
     command: test
     projects: '**/*Test/*.csproj'
     arguments: '--configuration $(buildConfiguration)'
