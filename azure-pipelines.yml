@@ -17,6 +17,13 @@ steps:
   inputs:
     version: '2.2.x'
     packageType: runtime    
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'restore'
+    projects: '**/*Test*.csproj'
+    restoreArguments: '--configuration $(buildConfiguration)'
+    feedsToUse: 'select'
 - task: DotNetCoreCLI@2
   inputs:
     command: test
